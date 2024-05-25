@@ -1,0 +1,442 @@
+import random
+
+# The Product class defines all of the styles, colors, and finishes that are
+# associated with displaying a randomly constructed company name. This class
+# finishes by printing and enumerating the list of products.
+class Product:
+    def __init__(self, style, color, finish):
+        self.style = style
+        self.color = color
+        self.finish = finish
+
+    def read(self):
+        return self.style, self.color, self.finish
+
+    def __str__(self):
+        return "Welcome to " + self.style + " " + self.color + " " + self.finish + " Golf World!" + "\n" + '"Where your wildest golf dreams come true!"'
+
+style = ["Radiant", "Serene", "Tranquil", "Majestic", "Vibrant", "Enigmatic"]
+color = ["Red", "Blue", "Green", "Yellow", "Orange", "Purple"]
+finish = ["Sparkly", "Faded", "Matte", "Glossy", "Neon", "Generic"]
+
+style_choice = random.choice(style)
+color_choice = random.choice(color)
+finish_choice = random.choice(finish)
+
+ProjectName = Product(style_choice, color_choice, finish_choice)
+print(ProjectName)
+products = ["Golfball", "Driver", "Wood", "Iron", "Wedge", "Hybrid", "Putter", "Golf Tee", "Golf Brand", "Golf Glove"]
+print("List of products to choose from: ")
+for index, ProdList in enumerate(products):
+    print(index+1, ProdList)
+
+import random
+
+# The Products class takes the base Product class and puts a massive spin on it which
+# develops the rest of the program. This class specifies all of the different products
+# that can be found in the stores and generates random quantities of each product that
+# can be found in the inventory.
+class Products:
+    def __init__(self, brand, ballpack, sot, club, accessory, apparel, ball_price, sot_price, club_price, accessory_price, apparel_price, quantity1, quantity2, quantity3, quantity4, quantity5, price):
+        self._brand = brand
+        self._ballpack = ballpack
+        self._sot = sot
+        self._club = club
+        self._accessory = accessory
+        self._apparel = apparel
+        self._ball_price = ball_price
+        self._sot_price = sot_price
+        self._club_price = club_price
+        self._accessory_price = accessory_price
+        self._apparel_price = apparel_price
+        self._quantity1 = quantity1
+        self._quantity2 = quantity2
+        self._quantity3 = quantity3
+        self._quantity4 = quantity4
+        self._quantity5 = quantity5
+        self._price = price
+
+    def get_brand(self):
+        return self._brand
+
+    def set_brand(self, brand):
+        self._brand = brand
+
+    def get_ballpack(self):
+        return self._ballpack
+
+    def set_ballpack(self, ballpack):
+        self._ballpack = ballpack
+
+    def get_sot(self):
+        return self._sot
+
+    def set_sot(self, sot):
+        self._sot = sot
+
+    def get_club(self):
+        return self._club
+
+    def set_club(self, club):
+        self._club = club
+
+    def get_accessory(self):
+        return self._accessory
+
+    def set_accessory(self, accessory):
+        self._accessory = accessory
+
+    def get_apparel(self):
+        return self._apparel
+
+    def set_apparel(self, apparel):
+        self._apparel = apparel
+
+    def get_quantity1(self):
+        return self._quantity1
+
+    def set_quantity1(self, quantity1):
+        self._quantity1 = quantity1
+
+    def get_quantity2(self):
+        return self._quantity2
+
+    def set_quantity2(self, quantity2):
+        self._quantity2 = quantity2
+
+    def get_quantity3(self):
+        return self._quantity3
+
+    def set_quantity3(self, quantity3):
+        self._quantity3 = quantity3
+
+    def get_quantity4(self):
+        return self._quantity4
+
+    def set_quantity4(self, quantity4):
+        self._quantity4 = quantity4
+
+    def get_quantity5(self):
+        return self._quantity5
+
+    def set_quantity5(self, quantity5):
+        self._quantity5 = quantity5
+
+    def get_price(self):
+        return self._price
+
+    def set_price(self, price):
+        self._price = price
+
+    def __str__(self):
+        line1_str = f'List of Inventories and Products:'
+        product1_str = f'Quantity and Size of Ball Sleeve: {self._quantity1} {self._ballpack} at ${self._ball_price:.2f} each.'
+        product2_str = f'Quantity and Size of Tee: {self._quantity2} {self._sot} at ${self._sot_price:.2f} each.'
+        product3_str = f'Quantity, Brand, and Type of Club: {self._quantity3} {self._brand} {self._club} at ${self._club_price:.2f} each.'
+        product4_str = f'Quantity and Accessory: {self._quantity4} {self._accessory} at ${self._accessory_price:.2f} each.'
+        product5_str = f'Quantity and Apparel: {self._quantity5} {self._apparel} at ${self._apparel_price:.2f} each.'
+        return "\n" + line1_str + "\n" + product1_str + "\n" + product2_str + "\n" + product3_str + "\n" + product4_str + "\n" + product5_str + "\n" # Separate the product information and price by a newline
+
+# The Inventory class creates lists of each type of product and then begins adding
+# quanitities to each product. The for loop then begins adding random pricing based
+# on numbers specified for each product in the inventory. The end of this class displays
+# a compiled list of the products in the inventory.
+class Inventory:
+    def __init__(self):
+        self.product = []
+
+
+    def add_item(self, item):
+        self.product.append(item)
+
+
+    def display_products(self):
+        for item in self.product:
+            print(item)
+
+ProdList = Inventory()
+brands = ['Scotty Cameron', 'Odyssey', 'Taylormade', 'Ping', 'Cleveland', 'Mizuno']
+ballpacks = ['3-pack of balls', '6-pack of balls', '9-pack of balls', '12-pack of balls']
+sots = ['1/2" Tees', '1" Tees', '1 1/2" Tees', '2" Tees']
+clubs = ['Driver', 'Wood', 'Hybrid', 'Iron', 'Wedge', 'Putter']
+accessories = ['Divot Tool', 'Ball Marker', 'Range Finder', 'Bag Tag', 'Towel', 'Sharpies', 'Hat Clips']
+apparels = ['Hat', 'T-Shirt', 'Windbreaker', 'Hoodie', 'Pants', 'Shorts', 'Shoes', 'Socks', 'Belt', 'Belt Buckle', 'Beanie', 'Sun Glasses']
+r = 0
+
+quantity1 = []
+quantity2 = []
+quantity3 = []
+quantity4 = []
+quantity5 = []
+
+for _ in range(r):
+    brand = random.choice(brands)
+    ballpack = random.choice(ballpacks)
+    sot = random.choice(sots)
+    club = random.choice(clubs)
+    accessory = random.choice(accessories)
+    apparel = random.choice(apparels)
+    ball_price = round(random.uniform(10, 25), 2)
+    sot_price = round(random.uniform(2, 10), 2)
+    club_price = round(random.uniform(50, 500), 2)
+    accessory_price = round(random.uniform(10, 50), 2)
+    apparel_price = round(random.uniform(15, 100), 2)
+    quantity1.append(random.randint(100, 500))
+    quantity2.append(random.randint(100, 500))
+    quantity3.append(random.randint(100, 500))
+    quantity4.append(random.randint(100, 500))
+    quantity5.append(random.randint(100, 500))
+    price = round(random.randint(1, 500), 2)
+    item = Products(brand, ballpack, sot, club, accessory, apparel, ball_price, sot_price, club_price, accessory_price, apparel_price, quantity1[-1], quantity2[-1], quantity3[-1], quantity4[-1], quantity5[-1], price)
+    ProdList.add_item(item)
+ProdList.display_products()
+
+# The Purchase class is a simple but necessary class. This class initializes the sale
+# with a total amount, then proceeds to increment the total amount by a given price,
+# ensuring the decimal place is always kept to two places. Once completed, it then
+# returns the total amount of the sale.
+class Purchase:
+    def __init__(self):
+        self.total = 0
+
+    def increment(self, price):
+        self.total += price
+        self.total = round(self.total, 2)
+
+    def __str__(self):
+        return "Sale: $" + str(self.total)
+
+# The Store class is what establishes the sales happening in each individual
+# store. This class displays the products, adds customers, and then begins
+# adding products from the inventory into the customers baskets. The end of
+# the Store class increments all of the items bought by the customer to then
+# produce the total sales of the customer.
+class Store:
+    def __init__(self, name):
+        self.name = name
+        self.product = Inventory()
+        self.customers = []
+        self.purchase = Purchase()
+
+    def show_store(self):
+        print(self.product.display_products())
+
+    def __str__(self):
+        return self.product
+        return self.name
+
+    def add_customer(self, customer):
+        self.customers.append(customer)
+
+    def get_customers(self):
+        for customer in self.customers:
+          club = random.choice(clubs)
+          print("customer " + customer.get_name() + " is busy shopping for a " + club + ".")
+
+    def run(self):
+        print("\n" + "Welcome to " + self.name + "!")
+        print("We have " + str(len(self.customers)) + " customers today.")
+
+        for customer in self.customers:
+            print("Customer " + customer.name + " is shopping.")
+            item = random.choice(clubs)
+            price = round(random.randint(1, 500), 2)
+            customer.add_to_order(item)
+            print("Customer " + customer.name + " added " + str(item) + " to their order.")
+            self.purchase.increment(price) 
+            print("Customer " + customer.name + " checked out and paid $" + str(price) + ".")
+        print("The total sales for " + self.name + " today is $" + str(self.purchase.total) + ".")
+
+# The Customer class initializes a customer with a name and a basket and adds
+# the customer to the store.
+class Customer:
+    def __init__(self, name):
+        self.name = name
+        self.customers = []
+        self.basket = []
+
+    def add_to_order(self, item):
+        self.basket.append(item)
+
+    def get_name(self):
+        return self.name
+
+    def get_basket(self):
+        return self.basket
+
+Store1 = Store("Golf City 1")
+
+names = ["Jon Rahm","Tiger Woods","Scottie Scheffler","Jordan Speith","Dustin Johnson","Jim Furyk","Arnold Palmer","Gary Player","Lee Trevino","Phil Mickelson","Jack Nicklaus"]
+for i in range(len(names)):
+    Store1.add_customer(Customer(names[i]))
+
+Store1.get_customers()
+
+local_store = Store("Golf World")
+
+import pandas as pd
+import os
+import random
+import altair as alt
+from datetime import datetime, timedelta
+
+# The Analytics class begins by adding the collected store results into a data
+# file and creating a .csv file from the added statistics. Then I grab the current
+# working directory and list all of the files in the directory while specifically
+# filtering for CSV files. Then I list all of the cities and begin to generate sales
+# data for each week in 2024. Each CSV file saves the sales totals by weeks at a time.
+# The while loop completes the weekly totals once per file and then moves to the next
+# week to continue to do the same thing. I then created a data frame that writes to
+# the CSV file. Then I grab the current directory, list all files in the current directory
+# and filter for only CSV files. Lastly, I append the master list from the extracted rows
+# in each CSV file and then extract a week name for the file name. You may find the 
+# CSV files located in the files tab. It shows all of the different weeks of sales for each
+# CSV file and also a file of the "latest-store.csv" which will show the original Golf City
+# stores.
+class Analytics:
+    def __init__(self):
+        self.store_analytics = []
+
+    def add_analytics(self, analytics):
+        self.store_analytics = analytics
+
+    def make_csv(self):
+        df = pd.DataFrame(self.store_analytics)
+        print(df)
+        entitle = "latest-store.csv"
+        df.to_csv(entitle)
+
+cwd = os.getcwd()
+files = os.listdir(cwd)
+csv_files = [f for f in files if f.endswith('.csv')]
+cities = ['virginia city', 'athabasco', 'marin city', 'sacramento', 'san francisco', 'san diego', 'palmdale', 'river city']
+start_date = datetime(2024, 1, 1)
+end_date = datetime(2024, 12, 31)
+current_date = start_date
+
+while current_date <= end_date:
+    weekly_totals_per_store = []
+    week_name = current_date.strftime('%B-%d-%Y')
+    current_date += timedelta(days=7)
+    for city in cities:
+        store_name = city
+        weekly_sales_total = random.randint(100000, 1000000)
+        store_dict = {'store_name': store_name, 'weekly_sales_total': weekly_sales_total}
+        weekly_totals_per_store.append(store_dict)
+
+        df = pd.DataFrame(weekly_totals_per_store)
+
+        save_as = week_name.replace(' ', '-').lower() + '.csv'
+        df.to_csv(save_as, index=False)
+
+current_directory = os.getcwd()
+all_files = os.listdir(current_directory)
+csv_files = [file for file in all_files if file.endswith('.csv')]
+all_stores_all_weekly_sales = []
+for filename in csv_files:
+    df = pd.read_csv(filename)
+    week_name = filename.replace('.csv', '')
+    for _, row in df.iterrows():
+        row_dict = row.to_dict()
+        row_dict['week'] = week_name
+        all_stores_all_weekly_sales.append(row_dict)
+
+
+
+
+# The Organization class is where all of the individual store data and analytics really
+# start to take form. Below, where simulate() is defined, you can see that I specified that
+# there would be three different stores to make up the organization. This class prints out
+# the store names and totals the sales across the months of the year for each store.
+# I added a list of customers to each store to make the purchases and then the program begins
+# to simulate sales from each store. The analytics portion begins to kick in by creating
+# a .csv file for each week of every month and breaking down the specific sales of that week
+# by store name. Then I combined the statistics and variance into a single data frame with the sales
+# totals shown from largest to smallest. Once all of this is completed, I used the histogram
+# to display all of the total sales for the year for each store.
+class Organization:
+    def __init__(self, name):
+        self.name = name
+        self.stores = []
+        self.analytics = []
+
+    def add_store(self, store):
+        self.stores.append(store)
+
+    def simulate(self):
+        print("Welcome to " + self.name + "!")
+        print("We have " + str(len(self.stores)) + " stores in our corporation.")
+        for store in self.stores:
+            store.run()
+        total_sales = sum(store.purchase.total for store in self.stores)
+        total_sales = round(total_sales, 2)
+        print("The total sales for " + self.name + " today is $" + str(total_sales) + ".")
+
+        dict_A = {"name":store1.name, "total_sales":store1.purchase.total}
+        dict_B = {"name":store2.name, "total_sales":store2.purchase.total}
+        dict_C = {"name":store3.name, "total_sales":store3.purchase.total}
+        self.analytics.append(dict_A)
+        self.analytics.append(dict_B)
+        self.analytics.append(dict_C)
+
+    def get_analytics(self):
+        return self.analytics
+
+    def display_analytics(self):
+        for i in self.analytics:
+            print(i)
+
+    def __str__(self):
+        result = self.name + ":\n"
+        for store in self.stores:
+            result += str(store) + "\n"
+        return result
+
+store1 = Store("Golf City 1")
+store2 = Store("Golf City 2")
+store3 = Store("Golf City 3")
+names = ["Jon Rahm", "Tiger Woods", "Scottie Scheffler", "Jordan Speith", "Dustin Johnson", "Jim Furyk",
+         "Arnold Palmer", "Gary Player", "Lee Trevino", "Phil Mickelson", "Jack Nicklaus"]
+for name in names:
+    store1.add_customer(Customer(name))
+    store2.add_customer(Customer(name))
+    store3.add_customer(Customer(name))
+corp = Organization("Golf World")
+corp.add_store(store1)
+corp.add_store(store2)
+corp.add_store(store3)
+corp.simulate()
+corp.display_analytics()
+analytic = Analytics()
+analytic.add_analytics(corp.get_analytics())
+analytic.make_csv()
+print(all_stores_all_weekly_sales)
+df = pd.DataFrame(all_stores_all_weekly_sales)
+width = 800
+height = 300
+base = alt.Chart(df, width=width, height=height).mark_line().encode(
+    x='week:T',
+    y='weekly_sales_total:Q',
+    color='store_name:N',
+    tooltip=['store_name:N', 'weekly_sales_total:Q', 'week:T']
+).interactive()
+grouped_stats = df.groupby('store_name')['weekly_sales_total'].describe()
+grouped_variance = df.groupby('store_name')['weekly_sales_total'].var().rename("variance")
+stats_with_variance = pd.concat([grouped_stats, grouped_variance], axis=1)
+print(stats_with_variance)
+grouped_variance = df.groupby('store_name')['weekly_sales_total'].var().rename("variance")
+ranked_stores = grouped_variance.sort_values(ascending=False)
+print(ranked_stores)
+data = ranked_stores.reset_index()
+data.columns = ['store_name', 'variance']
+color_scale = alt.Scale(scheme='redblue', domainMid=0)
+histogram = alt.Chart(data).mark_bar().encode(
+    x='store_name:N',
+    y='variance:Q',
+    color=alt.Color('variance:Q', scale=color_scale, legend=None),
+    tooltip=['store_name:N', 'variance:Q']
+).properties(
+    width=800
+)
+histogram
+
